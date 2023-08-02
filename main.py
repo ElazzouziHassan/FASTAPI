@@ -6,4 +6,4 @@ app = FastAPI()
 
 @app.get('/')
 def sayHi():
-    return "{'hello':'FastAPI'}"
+    return {'hello':'FastAPI'}
