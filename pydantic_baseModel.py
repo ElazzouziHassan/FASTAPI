@@ -19,3 +19,11 @@ async def createPackage(package: Package):
     return package
 # use this link to try it:
 # http://127.0.0.1:8000/docs#/default/createPackage_package__post
+
+@app.post("/package/{priority}")
+async def makePackage(priority: int, package: Package, value: bool):
+    return {
+        "Priority": priority,
+        **package.model_dump(),
+        "Value": value
+    }
